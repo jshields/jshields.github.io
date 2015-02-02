@@ -7,7 +7,7 @@ html, body{
 h1, h2, h3{
 	font-family: Century, Georgia, "Times New Roman", serif;
 }
-.love{
+.love .glyphicon{
 	color: #FF00BC;
 	background-color: #FF4444;
 	font-size: 5em;
@@ -15,4 +15,8 @@ h1, h2, h3{
 	margin: 0 auto;
 	padding: 0.5em;
 	display: block;
+}
+.love:hover{
+	text-decoration: none;
+	cursor: default;
 }
