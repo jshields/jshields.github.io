@@ -1,10 +1,18 @@
 html, body{
 	height: 100%;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 h1, h2, h3{
 	font-family: Century, Georgia, "Times New Roman", serif;
 }
-.ico-char{
+.love{
+	color: #FF00BC;
+	background-color: #FF4444;
 	font-size: 5em;
+	text-align: center;
+	margin: 0 auto;
+	padding: 0.5em;
+	display: block;
 }
