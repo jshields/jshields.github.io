@@ -1,0 +1,10 @@
+#carousel-ernie{
+	width: 50%;
+	margin: 0 auto;
+	display: block;
+}
+.carousel-inner .item a img, .carousel-inner .item img {
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
+}
