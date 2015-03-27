@@ -17,7 +17,7 @@ body{
 h1, h2, h3{
 	font-family: Century, Georgia, "Times New Roman", serif;
 }
-#media-box{
+.media-box{
   background-image: url(../images/katy-sharks.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -30,14 +30,28 @@ h1, h2, h3{
   background-size: 100%;
   transition: background-size .5s ease-out;
 }
-#media-box:hover{
+.media-box:hover{
   background-size: 120%;
   transition: background-size .5s ease-out;
 }
-#media-box:after{
+.media-box:after{
   display: block;
   font-size: 2em;
   text-align: center;
   vertical-align: middle;
   content: "\0021E8";
+}
+.dialogue{
+  z-index: 500;
+  border: 1px solid #000;
+  box-shadow:50px 50px 50px 10px black;
+  min-width: 500px;
+  min-height: 200px;
+}
+.dialogue-top{
+  background-color: #777;
+  cursor: move;
+}
+.dialogue-body{
+  background-color: #EEE;
 }
