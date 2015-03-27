@@ -5,20 +5,11 @@ html, body{
 	margin: 0;
 	padding: 0;
 }
-html{
-  background-color: #000;
-}
-body{
-  background-image: url(../images/katy-gems.jpg);
-  background-position: center;
-  background-size: 105%;
-  background-repeat: repeat;
-}
 h1, h2, h3{
 	font-family: Century, Georgia, "Times New Roman", serif;
 }
 .media-box{
-  background-image: url(../images/katy-sharks.jpg);
+  background-image: url(images/placeholder.jpg);
   background-repeat: no-repeat;
   background-position: center;
   border: 0.3em solid #0080ff;
@@ -39,12 +30,12 @@ h1, h2, h3{
   font-size: 2em;
   text-align: center;
   vertical-align: middle;
-  content: "\0021E8";
+  content: "<span class='fa fa-circle-o-notch fa-spin'></span>";
 }
 .dialogue{
   z-index: 500;
   border: 1px solid #000;
-  box-shadow:50px 50px 50px 10px black;
+  box-shadow: 30px 30px 50px 10px black;
   width: 500px;
   height: 200px;
 }
