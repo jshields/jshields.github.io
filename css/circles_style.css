@@ -5,12 +5,12 @@
 *{
 	border: none;
 	outline-color: #f0f;
+	font-size: 1em;
 }
 html, body{
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	font-size: 1em;
 	font-family: Helvetica, Arial, sans-serif;
 	color: #111;
 	background-color: #eee;
@@ -40,8 +40,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 header, footer{
-	font-family: monospace;
-	font-size: 1em;
 	text-align: center;
 	color: #eee;
 	background-color: rgba(17, 17, 17, 0.8); /* #111 at 0.8 opacity, using rgba to avoid transparency issues with child elements. Consider changing back to #111 for production site */
@@ -61,6 +59,9 @@ footer{
 	height: 5%;
 	box-shadow: 0px -4px 5px #333;
 }
+h1{
+	font-size: 2em;
+}
 address{
 	display: inline-block;
 }
@@ -75,9 +76,6 @@ label{
 	font-weight: bold;
 	display: block;
 }
-button{
-	display: block;
-}
 footer a {
   color: #ccc;
 }
@@ -90,7 +88,7 @@ a:hover {
 textarea{
 	resize: vertical;
 }
-button, input[type=button], select, input[type=text], input[type=email], textarea{
+select, input[type=text], input[type=email], textarea{
 	margin-bottom: 0.5em;
 	border: none;
 	font-size: 1.2em;
@@ -100,9 +98,10 @@ button, input[type=button], select, input[type=text], input[type=email], textare
 	box-shadow: 2px 2px 5px #333;
 	font-family: Helvetica, Arial, sans-serif;
 	box-sizing: border-box;
-	width: 30%;
+	border-radius: 3px;
+	width: 100%;
 }
-button:hover, input[type=button]:hover, select:hover, .circle:hover, input[type=text]:hover, input[type=email]:hover, textarea:hover{
+select:hover, .circle:hover, input[type=text]:hover, input[type=email]:hover, textarea:hover{
 	color: #111;
 	background-color: #eee;
 	cursor: pointer;
@@ -114,9 +113,14 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 }
 .full-height{
 	min-height: 100%;
-	padding-top: 4em;
+	padding-top: 5em;
 	box-sizing: border-box;
 	border: 1px solid black; /*<- for debug only*/
+}
+.col-mid{
+	margin: 0 auto;
+	display: block;
+	width: 50%;
 }
 .circle{
 	height: 4em;
@@ -126,6 +130,9 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	border-radius: 2em;
 	text-align: center;
 	margin: 1em 1em 1em 0;
+	display: inline-block;
+	margin: 0 3em 0 0;
+	position: relative;
 }
 /* does not work
 .circle:focus{
@@ -135,8 +142,10 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	font-size: 1em;
 	line-height: 1em;
 	margin: 0 auto;
-	padding-top: 1.5em;
 	width: 80%;
+}
+div>.circle-content{
+	padding-top: 1.5em;
 }
 .circle:hover>.circle-content{
 	color: #111;
@@ -166,23 +175,7 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	content: '\f054';
 }
 #social-icons.circle-row:hover>ul li:last-of-type:after{
-	margin-left: 3em;
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
 	content: '\f053';
-}
-/*.circle-row>ul>li:nth-child(5){
-	z-index: 10;
-}*/
-.circle-row .circle{
-	display: inline-block;
-	margin: 0 1em 0 0;
-	position: relative;
 }
 #social-icons.circle-row .circle{
 	display: inline-block;
@@ -211,7 +204,7 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	text-decoration: none;
 	outline: none;
 }
-.pop-over:hover>div:last-of-type:after, .pop-over:hover>.pop-point:last-of-type:after{ /*, .circle.pop-over:hover>.circle-content:after{  nth-child(2)  */
+.pop-over:hover>*:after, .pop-over:hover>.pop-point:last-of-type:after{ /*, .circle.pop-over:hover>.circle-content:after{  nth-child(2)  */
 	z-index: 1000;
 	position: absolute;
 	margin: 0;
@@ -223,6 +216,9 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	box-shadow: 2px 2px 5px #333;
 	content: attr(pop-data);
 }
+.success, .failure{
+	text-align: center;
+}
 .success{
 	background-color: #80ff80;
 	border: 1px solid #0f0;
@@ -230,12 +226,25 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 .success:before{
 	content: 'Success! ';
 }
-.error{
+.failure{
 	background-color: #ff8080;
 	border: 1px solid #f00;
 }
-.error:before{
+.failure:before{
 	content: 'Invalid input: ';
+}
+#profile-picture{
+	background-size: 15em;
+	width: 15em;
+	height: 15em;
+	background-image: url(../images/suit_pic.png);
+	background-repeat: no-repeat;
+	border-radius: 1em;
+	background-position: top;
+	display: block;
+	margin: 0 auto;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
 }
 /*Helper Classes*/
 .red{
