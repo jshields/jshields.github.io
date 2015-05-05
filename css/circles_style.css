@@ -1,0 +1,279 @@
+/* TODO acknowledge Fontawesome usage*/
+::selection{
+	background-color: #f0f;
+}
+*{
+	border: none;
+	outline-color: #f0f;
+}
+html, body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-size: 1em;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #111;
+	background-color: #eee;
+}
+/* webkit scrollbar styling */
+html{
+	overflow: hidden;
+}
+body{
+	overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+	position: absolute;
+	z-index: 4000;
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+	z-index: 4000;
+	background-color: #111;
+    -webkit-box-shadow: -2px 0px 5px #333;
+}
+body::-webkit-scrollbar-thumb {
+  z-index: 8000;
+  background-color: #eee;
+  outline: 1px solid #f0f;
+  -webkit-box-shadow: -4px 0px 5px #333;
+}
+
+header, footer{
+	font-family: monospace;
+	font-size: 1em;
+	text-align: center;
+	color: #eee;
+	background-color: rgba(17, 17, 17, 0.8); /* #111 at 0.8 opacity, using rgba to avoid transparency issues with child elements. Consider changing back to #111 for production site */
+	padding: 0.5em 0;
+	position: fixed;
+	z-index: 2000;
+	width: 100%;
+}
+header{
+	box-shadow: 0px 4px 5px #333;
+}
+/* add media query for fixing/unfixing header */
+footer{
+	text-align: center;
+	bottom: 0;
+	display: block;
+	height: 5%;
+	box-shadow: 0px -4px 5px #333;
+}
+address{
+	display: inline-block;
+}
+h1{
+	margin: 0 0 .2em 0;
+}
+h2{
+	margin: 0 0 0.1em 0;
+}
+label{
+	margin-top: 1em;
+	font-weight: bold;
+	display: block;
+}
+button{
+	display: block;
+}
+footer a {
+  color: #ccc;
+}
+a{
+	color: #555;
+}
+a:hover {
+  color: #f0f;
+}
+textarea{
+	resize: vertical;
+}
+button, input[type=button], select, input[type=text], input[type=email], textarea{
+	margin-bottom: 0.5em;
+	border: none;
+	font-size: 1.2em;
+	color: #eee;
+	background-color: #111;
+	padding: 0 0.2em 0 0.2em;
+	box-shadow: 2px 2px 5px #333;
+	font-family: Helvetica, Arial, sans-serif;
+	box-sizing: border-box;
+	width: 30%;
+}
+button:hover, input[type=button]:hover, select:hover, .circle:hover, input[type=text]:hover, input[type=email]:hover, textarea:hover{
+	color: #111;
+	background-color: #eee;
+	cursor: pointer;
+}
+input[type=text]:focus, input[type=email]:focus, textarea:focus{
+	color: #111;
+	background-color: #eee;
+	cursor: text;
+}
+.full-height{
+	min-height: 100%;
+	padding-top: 4em;
+	box-sizing: border-box;
+	border: 1px solid black; /*<- for debug only*/
+}
+.circle{
+	height: 4em;
+	width: 4em;
+	background-color: #111;
+	box-shadow: 2px 2px 5px #333;
+	border-radius: 2em;
+	text-align: center;
+	margin: 1em 1em 1em 0;
+}
+/* does not work
+.circle:focus{
+	box-shadow: 2px 2px 5px #f0f;
+}*/
+.circle-content{
+	font-size: 1em;
+	line-height: 1em;
+	margin: 0 auto;
+	padding-top: 1.5em;
+	width: 80%;
+}
+.circle:hover>.circle-content{
+	color: #111;
+	cursor: pointer;
+}
+.circle-row>ul>li:first-child .circle{
+	z-index: 50;
+}
+.circle-row>ul>li:nth-child(2) .circle{
+	z-index: 40;
+}
+.circle-row>ul>li:nth-child(3) .circle{
+	z-index: 30;
+}
+.circle-row>ul>li:nth-child(4) .circle{
+	z-index: 20;
+}
+#social-icons.circle-row>ul li:last-of-type:after{
+	margin-left: 3em;
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+	content: '\f054';
+}
+#social-icons.circle-row:hover>ul li:last-of-type:after{
+	margin-left: 3em;
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+	content: '\f053';
+}
+/*.circle-row>ul>li:nth-child(5){
+	z-index: 10;
+}*/
+.circle-row .circle{
+	display: inline-block;
+	margin: 0 1em 0 0;
+	position: relative;
+}
+#social-icons.circle-row .circle{
+	display: inline-block;
+	margin: 0 -3em 0 0;
+	position: relative;
+	-webkit-transition: margin 1s;
+	transition: margin 1s;
+}
+#social-icons.circle-row:hover .circle{
+	display: inline-block;
+	margin: 0 1em 0 0;
+	position: relative;
+}
+.circle-row .circle-content{
+	display: inline-block;
+}
+.circle-row>ul{
+	list-style: none;
+	padding: 0;
+	display: inline;
+}
+.circle-row>ul li{
+	display: inline;
+}
+.circle-row>ul li>a, .circle-link{
+	text-decoration: none;
+	outline: none;
+}
+.pop-over:hover>div:last-of-type:after, .pop-over:hover>.pop-point:last-of-type:after{ /*, .circle.pop-over:hover>.circle-content:after{  nth-child(2)  */
+	z-index: 1000;
+	position: absolute;
+	margin: 0;
+	padding: 0.1em 0.5em;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1em;/*not working - font size varies*/
+	color: #111;
+	background-color: #eee;
+	box-shadow: 2px 2px 5px #333;
+	content: attr(pop-data);
+}
+.success{
+	background-color: #80ff80;
+	border: 1px solid #0f0;
+}
+.success:before{
+	content: 'Success! ';
+}
+.error{
+	background-color: #ff8080;
+	border: 1px solid #f00;
+}
+.error:before{
+	content: 'Invalid input: ';
+}
+/*Helper Classes*/
+.red{
+	color: #f00;
+}
+.yellow{
+	color: #ff0;
+}
+.green{
+	color: #0f0;
+}
+.blue{
+	color: #00f;
+}
+.magenta{
+	color: #f0f;
+}
+.off-white{
+	color: #eee;
+}
+.off-black{
+	color: #111;
+}
+.hide-on-start{
+	display: none;
+}
+/* floats with micro clearfix */
+.pull-right{
+	float: right;
+}
+.pull-left{
+	float: left;
+}
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}

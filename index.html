@@ -1,35 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>jshields Github</title>
-	<meta charset="utf-8">
-	<meta name="keywords" content="github, git, Joshua, Shields">
-	<meta name="description" content="Github hosted page of Joshua Shields">
-	<meta name="author" content="Joshua Shields">
+	<title>Joshua Shields</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+	<meta name="mobileoptimized" content="0" />
+	<meta name="description" content="Joshua Shields' Portfolio Site">
+	<meta name="author" content="Joshua Shields" />
+	<meta property="og:site_name" content="Joshua Shields" />
+	<meta property="og:title" content="Joshua Shields Design and Development" />
+	<meta property="og:url" content="http://www.joshuashields.com" />
+	<meta property="og:description" content="Joshua Shields' personal site." />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="http://www.joshuashields.com/images/shield_logo_4.png" />
+	<meta name="theme-color" content="#f0f"><!-- Android theme color -->
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/jshields-git.css">
+	<link rel="stylesheet" type="text/css" href="css/circles_style.css">
+	<!--<link rel="shortcut icon" href="http://www.joshuashields.com/favicon.ico?v=1" type="image/x-icon" />
+	<link rel="icon" href="http://www.joshuashields.com/favicon.ico?v=1" type="image/x-icon" />-->
 </head>
 <body>
-<div class="dialogue">
-    <div class="dialogue-top">
-      <span class="fa fa-arrows fa-border pull-left"></span>
-      <span class="fa fa-times fa-border pull-right"></span>
-    </div>
-    <div class="dialogue-body">
-      lorem ipsum
-    </div>
-</div>
+<body>
 <header>
-	<h1>Josh's Special <span class="fa fa-github"></span> GitHub Hosted Page!</h1><h3>A test page by <a href="http://www.joshuashields.com">Joshua Shields</a></h3>
+	<nav>
+	 	<div id="circles-menu" class="circle-row">
+			<div class="circle pop-over">
+				<div class="circle-content off-white" pop-data="bio">
+					<span class="fa fa-user"></span>
+				</div>
+			</div>
+			<div class="circle pop-over">
+				<div class="circle-content off-white" pop-data="contact">
+					<span class="fa fa-envelope"></span>
+				</div>
+			</div>
+			<div class="circle pop-over">
+				<div class="circle-content off-white" pop-data="code">
+					<span class="fa fa-code"></span>
+				</div>
+			</div>
+			<a href="resume.php" class="circle-link">
+				<div class="circle pop-over">
+					<div class="circle-content off-white" pop-data="résumé">
+							<span class="fa fa-file-text"></span>
+					</div>
+				</div>
+			</a>
+		</div><!-- end of circles-menu -->
+	   
+	     
+	</nav>
 </header>
-<!--main content-->
-<div id="main">
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur est dui, commodo quis auctor ac, congue eu arcu. In consectetur purus in pharetra eleifend. Suspendisse potenti. Quisque nec gravida justo. Mauris nec mollis diam. In hac habitasse platea dictumst. Aenean a ante a justo convallis varius a sed nibh. Pellentesque id nisi congue, euismod dolor non, consequat risus. Aliquam enim nulla, imperdiet non condimentum vitae, efficitur et nisl. Suspendisse id aliquet purus, in tempor eros. Sed interdum porta purus sed fermentum. Donec gravida varius mauris, vitae malesuada arcu iaculis eget. Vivamus egestas tortor eu quam dignissim luctus.
+
+<div class="full-height">
+	lorem ipsum1
 </div>
+
+<div class="full-height">
+	lorem ipsum2
+</div>
+
+<div class="full-height">
+	<h1>Contact</h1>
+	<form id="contactForm" method="post" action="contact.php">
+		<div>
+	    	<label for="txtEmail">email address</label>
+	    	<input id="txtEmail" name="txtEmail" type="email" placeholder="enter your email" />
+		</div>
+		<div>
+	    	<label for="txtName">name</label>
+	    	<input id="txtName" name="txtName" type="text" placeholder="enter your name" />
+		</div>
+		<div>
+			<label for="txtMessage">message</label>
+			<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="enter your message" spellcheck="true"></textarea>
+		</div>
+		<!--<?php
+			session_start();
+			if ($_SESSION['cf_return']){
+				echo $_SESSION['cf_return'];
+			}
+		?>-->
+		<p id="contact-message">This message will be sent to <a href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.</p>
+		<!-- Not using type submit to avoid forced styling by browsers -->
+		<input id="btnSubmit" type="button" value="submit" />
+	</form>
+	<h2>Social Media</h2>
+		<div id="social-icons" class="circle-row">
+		<ul>
+			<li>
+				<a href="#fb">
+					<div class="circle pop-over">
+						<div class="circle-content off-white" pop-data="Fb"><span class="fa fa-facebook fa-lg"></span></div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#twt">
+					<div class="circle pop-over">
+						<div class="circle-content off-white" pop-data="Twtr"><span class="fa fa-twitter fa-lg"></span></div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#li">
+					<div class="circle pop-over">
+						<div class="circle-content off-white" pop-data="LnkdN"><span class="fa fa-linkedin fa-lg"></span></div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="http://jshields.github.io/">
+					<div class="circle pop-over">
+						<div class="circle-content off-white" pop-data="Gthb"><span class="fa fa-github fa-lg"></span></div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div><!-- end of social-icons -->
+</div>
+
 <footer>
-  &copy; 2015 Joshua Shields | <a href="http://www.joshuashields.com/">http://www.joshuashields.com <span class="fa fa-arrow-right"></span></a>
+	&copy; <!-- <php? echo date(Y); ?> -->
+	<address>
+		Joshua Shields. All Rights Reserved. Contact at: <a href="mailto:josh@joshuashields.com" tabindex="1">josh@joshuashields.com</a>
+	</address>
 </footer>
-<script type="text/javascript" src="js/lib/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="js/jshields-git.js"></script>
+
+<!--<script src="js/lib/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="js/circles.js" type="text/javascript"></script>-->
+<!-- Google Analytics here-->
 </body>
 </html>
