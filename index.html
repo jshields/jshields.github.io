@@ -5,14 +5,14 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 	<meta name="mobileoptimized" content="0" />
-	<meta name="description" content="Joshua Shields' Portfolio Site">
+	<meta name="description" content="Joshua Shields' portfolio site for web design and development.">
 	<meta name="author" content="Joshua Shields" />
 	<meta property="og:site_name" content="Joshua Shields" />
 	<meta property="og:title" content="Joshua Shields Design and Development" />
 	<meta property="og:url" content="http://www.joshuashields.com" />
 	<meta property="og:description" content="Joshua Shields' personal site." />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="http://www.joshuashields.com/images/shield_logo_4.png" />
+	<!--<meta property="og:image" content="http://www.joshuashields.com/images/shield_logo_4.png" />-->
 	<meta name="theme-color" content="#f0f" /><!-- Android theme color -->
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/circles_style.css">
@@ -23,22 +23,28 @@
 <header>
 	<nav>
 	 	<div id="circles-menu" class="circle-row">
-			<div class="circle pop-over">
-				<div class="circle-content off-white" pop-data="bio">
-					<span class="fa fa-user"></span>
+	 		<a href="#bio-panel">
+				<div class="circle pop-over">
+					<div class="circle-content off-white" pop-data="bio">
+						<span class="fa fa-user"></span>
+					</div>
 				</div>
-			</div>
-			<div class="circle pop-over">
-				<div class="circle-content off-white" pop-data="contact">
-					<span class="fa fa-envelope"></span>
+			</a>
+			<a href="#contact-panel">
+				<div class="circle pop-over">
+					<div class="circle-content off-white" pop-data="contact">
+						<span class="fa fa-envelope"></span>
+					</div>
 				</div>
-			</div>
-			<div class="circle pop-over">
-				<div class="circle-content off-white" pop-data="projects">
-					<span class="fa fa-code"></span>
+			</a>
+			<a href="#projects-panel">
+				<div class="circle pop-over">
+					<div class="circle-content off-white" pop-data="projects">
+						<span class="fa fa-code"></span>
+					</div>
 				</div>
-			</div>
-			<a href="resume.php" class="circle-link">
+			</a>
+			<a href="#resume-panel">
 				<div class="circle pop-over">
 					<div class="circle-content off-white" pop-data="résumé">
 						<span class="fa fa-file-text"></span>
@@ -49,30 +55,34 @@
 	</nav>
 </header>
 
-<div class="full-height">
+<div id="bio-panel" class="full-height">
 	<div class="col-mid">
-		<h1><span class="fa fa-user"></span> Biography</h1>
+		<h1><span class="fa fa-user"></span> biography</h1>
 		<!--<img id="profile-picture-test" src="images/suit_pic.png" alt="profile picture">-->
 		<div id="profile-picture"></div>
-		<p>bio about me lorem ipsum1</p>
+		<p>
+			Joshua Shields is a web designer &amp; developer based out of Chicago.
+			He has worked at Cars.com and Chicago Public Schools as a technical intern.
+			After graduating from DePaul University, he began work at Textura Corporation.
+		</p>
 	</div>
 </div>
 
 <div id="contact-panel" class="full-height">
 	<div class="col-mid">
-		<h1><span class="fa fa-envelope"></span> Contact</h1>
+		<h1><span class="fa fa-envelope"></span> contact</h1>
 		<form id="contactForm" method="post" action="contact.php">
 			<div>
 		    	<label for="txtEmail">email address</label>
-		    	<input id="txtEmail" name="txtEmail" type="email" placeholder="enter your email" />
+		    	<input id="txtEmail" name="txtEmail" type="email" placeholder="your email" />
 			</div>
 			<div>
 		    	<label for="txtName">name</label>
-		    	<input id="txtName" name="txtName" type="text" placeholder="enter your name" />
+		    	<input id="txtName" name="txtName" type="text" placeholder="your name" />
 			</div>
 			<div>
 				<label for="txtMessage">message</label>
-				<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="enter your message" spellcheck="true"></textarea>
+				<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="your message" spellcheck="true"></textarea>
 			</div>
 			<!--<?php
 				session_start();
@@ -81,24 +91,33 @@
 				}
 			?>-->
 			<p id="contact-message">This message will be sent to <a href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.</p>
-			<p class="success">example of success class</p>
-			<p class="failure">example of failure class</p>
+			<!--<p class="success">example of success class</p>
+			<p class="failure">example of failure class</p>-->
 			<!-- Not using type submit to avoid forced styling by browsers -->
 			<!-- test on iOS Safari -->			
 			<!-- change to button-->
-			<div class="circle pop-over">
-				<div class="circle-content off-white" pop-data="Send">
-					<span class="fa fa-arrow-right fa-lg"></span>
+			<div class="circle-row">
+				<div class="circle pop-over">
+					<div class="circle-content off-white" pop-data="send">
+						<span class="fa fa-arrow-right fa-lg"></span>
+					</div>
 				</div>
 			</div>
 		</form>
-		<h2>Social Media</h2>
+		<!--<h2>social media</h2>-->
 			<div id="social-icons" class="circle-row">
 			<ul>
 				<li>
 					<a href="#fb">
 						<div class="circle pop-over">
 							<div class="circle-content off-white" pop-data="Fb"><span class="fa fa-facebook fa-lg"></span></div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#fb">
+						<div class="circle pop-over">
+							<div class="circle-content off-white" pop-data="Google"><span class="fa fa-google-plus fa-lg"></span></div>
 						</div>
 					</a>
 				</li>
@@ -116,6 +135,16 @@
 						</div>
 					</a>
 				</li>
+			</ul>
+		</div><!-- end of social-icons -->
+	</div><!-- end of column -->
+</div>
+<div id="projects-panel" class="full-height">
+	<div class="col-mid">
+		<h1><span class="fa fa-code"></span> projects</h1>
+		<p>Here are a few code examples.</p>
+		<div class="circle-row">
+			<ul>
 				<li>
 					<a href="http://jshields.github.io/">
 						<div class="circle pop-over">
@@ -124,26 +153,25 @@
 					</a>
 				</li>
 			</ul>
-		</div><!-- end of social-icons -->
-	</div><!-- end of column -->
-</div>
-<div class="full-height">
-	<div class="col-mid">
-		<h1><span class="fa fa-code"></span> Projects</h1>
-		<p>lorem ipsum2</p>
+		</div>
 	</div>
 </div>
-<div class="full-height">
+<div id="resume-panel" class="full-height">
 	<div class="col-mid">
-		<h1><span class="fa fa-file-text"></span> Résumé</h1>
+		<h1><span class="fa fa-file-text"></span> résumé</h1>
 		<p>lorem ipsum3</p>
-		<div class="circle pop-over">
-			<div class="circle-content off-white" pop-data="dl"><span class="fa fa-download fa-lg"></span></div>
+		<iframe scrolling="no" seamless="seamless" src="resources/pdf-test.pdf">
+			<p class="failure">Your browser does not support iframes.</p>
+		</iframe>
+		<div class="circle-row">
+			<div class="circle pop-over">
+				<div class="circle-content off-white" pop-data="download résumé"><span class="fa fa-download fa-lg"></span></div>
+			</div>
 		</div>
 	</div>
 </div>
 <footer>
-	&copy; <!-- <php? echo date(Y); ?> -->
+	&copy; <!-- <php? echo date(Y); ?> also consider concatenating email string josh@ + joshuashields.com -->
 	<address>
 		Joshua Shields. All Rights Reserved. Contact at: <a href="mailto:josh@joshuashields.com" tabindex="1">josh@joshuashields.com</a>
 	</address>

@@ -16,7 +16,7 @@ html, body{
 	background-color: #eee;
 }
 /* webkit scrollbar styling */
-html{
+/*html{
 	overflow: hidden;
 }
 body{
@@ -38,6 +38,7 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid #f0f;
   -webkit-box-shadow: -4px 0px 5px #333;
 }
+*/
 
 header, footer{
 	text-align: center;
@@ -62,6 +63,12 @@ footer{
 h1{
 	font-size: 2em;
 }
+h2{
+	font-size: 1.5em;
+}
+h1, h2, label{
+	text-align: center;
+}
 address{
 	display: inline-block;
 }
@@ -85,6 +92,20 @@ a{
 a:hover {
   color: #f0f;
 }
+iframe{
+	width: 17em;
+	height: 22em;
+	display: block;
+	margin: 0 auto;
+}
+/* media query
+iframe{
+	width: 8.5em;
+	height: 11em;
+	display: block;
+	margin: 0 auto;
+}
+*/
 textarea{
 	resize: vertical;
 }
@@ -115,7 +136,8 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	min-height: 100%;
 	padding-top: 5em;
 	box-sizing: border-box;
-	border: 1px solid black; /*<- for debug only*/
+	border-bottom: 1px solid #111;
+	/*box-shadow: -5px 0px 12px #000, 5px 0px 12px #000;*/
 }
 .col-mid{
 	margin: 0 auto;
@@ -131,7 +153,7 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	text-align: center;
 	margin: 1em 1em 1em 0;
 	display: inline-block;
-	margin: 0 3em 0 0;
+	margin: 0 2em;
 	position: relative;
 }
 /* does not work
@@ -151,60 +173,31 @@ div>.circle-content{
 	color: #111;
 	cursor: pointer;
 }
-.circle-row>ul>li:first-child .circle{
-	z-index: 50;
-}
-.circle-row>ul>li:nth-child(2) .circle{
-	z-index: 40;
-}
-.circle-row>ul>li:nth-child(3) .circle{
-	z-index: 30;
-}
-.circle-row>ul>li:nth-child(4) .circle{
-	z-index: 20;
-}
-#social-icons.circle-row>ul li:last-of-type:after{
-	margin-left: 3em;
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: inherit;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
-	content: '\f054';
-}
-#social-icons.circle-row:hover>ul li:last-of-type:after{
-	content: '\f053';
-}
-#social-icons.circle-row .circle{
-	display: inline-block;
-	margin: 0 -3em 0 0;
-	position: relative;
-	-webkit-transition: margin 1s;
-	transition: margin 1s;
-}
-#social-icons.circle-row:hover .circle{
-	display: inline-block;
-	margin: 0 1em 0 0;
-	position: relative;
-}
 .circle-row .circle-content{
 	display: inline-block;
 }
-.circle-row>ul{
-	list-style: none;
+.circle-row, .circle-row>ul{
+	text-align: center;
 	padding: 0;
-	display: inline;
+	list-style: none;
 }
 .circle-row>ul li{
 	display: inline;
 }
-.circle-row>ul li>a, .circle-link{
+/*media query
+.circle-row>ul li{
+	margin: 0 auto;
+	display: block;
+}
+.circle{
+	margin: 0;
+}
+*/
+.circle-row>ul li>a, .circle-row>a{
 	text-decoration: none;
 	outline: none;
 }
-.pop-over:hover>*:after, .pop-over:hover>.pop-point:last-of-type:after{ /*, .circle.pop-over:hover>.circle-content:after{  nth-child(2)  */
+.pop-over:hover>div:after{ /*, .circle.pop-over:hover>.circle-content:after{  nth-child(2)  */
 	z-index: 1000;
 	position: absolute;
 	margin: 0;
@@ -231,7 +224,7 @@ div>.circle-content{
 	border: 1px solid #f00;
 }
 .failure:before{
-	content: 'Invalid input: ';
+	content: 'Oops! ';
 }
 #profile-picture{
 	background-size: 15em;
