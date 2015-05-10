@@ -15,36 +15,11 @@ html, body{
 	color: #111;
 	background-color: #eee;
 }
-/* webkit scrollbar styling */
-/*html{
-	overflow: hidden;
-}
-body{
-	overflow-y: scroll;
-}
-body::-webkit-scrollbar {
-	position: absolute;
-	z-index: 4000;
-    width: 1em;
-}
-body::-webkit-scrollbar-track {
-	z-index: 4000;
-	background-color: #111;
-    -webkit-box-shadow: -2px 0px 5px #333;
-}
-body::-webkit-scrollbar-thumb {
-  z-index: 8000;
-  background-color: #eee;
-  outline: 1px solid #f0f;
-  -webkit-box-shadow: -4px 0px 5px #333;
-}
-*/
-
 header, footer{
 	text-align: center;
 	color: #eee;
 	background-color: rgba(17, 17, 17, 0.8); /* #111 at 0.8 opacity, using rgba to avoid transparency issues with child elements. Consider changing back to #111 for production site */
-	padding: 0.5em 0;
+	padding: 0;
 	position: fixed;
 	z-index: 2000;
 	width: 100%;
@@ -52,12 +27,18 @@ header, footer{
 header{
 	box-shadow: 0px 4px 5px #333;
 }
-/* add media query for fixing/unfixing header */
+/* add media query or js for fixing/unfixing header */
 footer{
 	bottom: 0;
 	display: block;
-	height: 5%;
+	height: 2em;
 	box-shadow: 0px -4px 5px #333;
+}
+#main-content{
+	height: 100%;
+}
+#main-content>.full-height:last-of-type{
+	margin-bottom: 3em;
 }
 h1{
 	font-size: 2em;
@@ -104,14 +85,6 @@ iframe[src*="docs.google"]{
 	/* resize iframe height with js? */
 	height: 512px;
 }
-/* media query
-iframe{
-	width: 8.5em;
-	height: 11em;
-	display: block;
-	margin: 0 auto;
-}
-*/
 textarea{
 	resize: vertical;
 }
@@ -157,9 +130,8 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	box-shadow: 2px 2px 5px #333;
 	border-radius: 2em;
 	text-align: center;
-	margin: 1em 1em 1em 0;
 	display: inline-block;
-	margin: 0 2em;
+	margin: 0.5% 3%;
 	position: relative;
 	outline: none;
 }
@@ -191,15 +163,6 @@ div>.circle-content{
 .circle-row>ul li{
 	display: inline;
 }
-/*media query
-.circle-row>ul li{
-	margin: 0 auto;
-	display: block;
-}
-.circle{
-	margin: 0;
-}
-*/
 .circle-row>ul li>a, .circle-row>a{
 	text-decoration: none;
 	outline: none;
@@ -286,3 +249,28 @@ div>.circle-content{
 .cf:after {
     clear: both;
 }
+
+/* webkit scrollbar styling */
+/*html{
+	overflow: hidden;
+}
+body{
+	overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+	position: absolute;
+	z-index: 4000;
+    width: 1em;
+}
+body::-webkit-scrollbar-track {
+	z-index: 4000;
+	background-color: #111;
+    -webkit-box-shadow: -2px 0px 5px #333;
+}
+body::-webkit-scrollbar-thumb {
+  z-index: 8000;
+  background-color: #eee;
+  outline: 1px solid #f0f;
+  -webkit-box-shadow: -4px 0px 5px #333;
+}
+*/
