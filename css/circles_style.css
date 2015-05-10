@@ -214,7 +214,7 @@ div>.circle-content{
 	color: #111;
 	background-color: #eee;
 	box-shadow: 2px 2px 5px #333;
-	content: attr(pop-data);
+	content: attr(data-pop);
 }
 .success, .failure{
 	text-align: center;

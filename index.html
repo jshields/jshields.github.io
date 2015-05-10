@@ -25,28 +25,28 @@
 	 	<div id="circles-menu" class="circle-row">
 	 		<a href="#bio-panel">
 				<div class="circle pop-over">
-					<div class="circle-content off-white" pop-data="bio">
+					<div class="circle-content off-white" data-pop="bio">
 						<span class="fa fa-user"></span>
 					</div>
 				</div>
 			</a>
 			<a href="#contact-panel">
 				<div class="circle pop-over">
-					<div class="circle-content off-white" pop-data="contact">
+					<div class="circle-content off-white" data-pop="contact">
 						<span class="fa fa-envelope"></span>
 					</div>
 				</div>
 			</a>
 			<a href="#projects-panel">
 				<div class="circle pop-over">
-					<div class="circle-content off-white" pop-data="projects">
+					<div class="circle-content off-white" data-pop="projects">
 						<span class="fa fa-code"></span>
 					</div>
 				</div>
 			</a>
 			<a href="#resume-panel">
 				<div class="circle pop-over">
-					<div class="circle-content off-white" pop-data="résumé">
+					<div class="circle-content off-white" data-pop="résumé">
 						<span class="fa fa-file-text"></span>
 					</div>
 				</div>
@@ -54,149 +54,151 @@
 		</div><!-- end of circles-menu -->
 	</nav>
 </header>
-<div id="bio-panel" class="full-height">
-	<div class="col-mid">
-		<h1><span class="fa fa-user"></span> biography</h1>
-		<!--<img id="profile-picture-test" src="images/suit_pic.png" alt="profile picture">-->
-		<div id="profile-picture"></div>
-		<p>
-			Joshua Shields is a web designer &amp; developer based out of Chicago.
-			He has worked at Cars.com and Chicago Public Schools as a technical intern.
-			After graduating from DePaul University, he began work at Textura Corporation.
-		</p>
-	</div>
-</div><!-- end of bio-panel -->
-<div id="contact-panel" class="full-height">
-	<div class="col-mid">
-		<h1><span class="fa fa-envelope"></span> contact</h1>
-		<form id="contactForm" method="post" action="contact.php">
-			<div>
-		    	<label for="txtEmail">email address</label>
-		    	<input id="txtEmail" name="txtEmail" type="email" placeholder="your email" />
-			</div>
-			<div>
-		    	<label for="txtName">name</label>
-		    	<input id="txtName" name="txtName" type="text" placeholder="your name" />
-			</div>
-			<div>
-				<label for="txtMessage">message</label>
-				<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="your message" spellcheck="true"></textarea>
-			</div>
-			<!--<?php
-				session_start();
-				if ($_SESSION['cf_return']){
-					echo $_SESSION['cf_return'];
-				}
-			?>-->
-			<p>This message will be sent to <a class="contact-email" href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.</p>
-			<!--<p class="success">example of success class</p>
-			<p class="failure">example of failure class</p>-->
-			<!-- Not using type submit to avoid forced styling by browsers -->
-			<!-- test on iOS Safari -->			
-			<!-- change to button-->
-			<div class="circle-row">
-				<button id="btnSubmit" class="circle pop-over">
-					<div class="circle-content off-white" pop-data="send">
-						<span class="fa fa-arrow-right fa-lg"></span>
-					</div>
-				</button>
-			</div>
-		</form>
-		<!--<h2>social media</h2>-->
-			<div id="social-icons" class="circle-row">
-			<ul>
-				<li>
-					<a href="#fb">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="Facebook"><span class="fa fa-facebook fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#fb">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="Google"><span class="fa fa-google-plus fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#twt">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="Twitter"><span class="fa fa-twitter fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#li">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="LinkedIn"><span class="fa fa-linkedin fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div><!-- end of social-icons -->
-	</div><!-- end of column -->
-</div><!-- end of contact-panel -->
-<div id="projects-panel" class="full-height">
-	<div class="col-mid">
-		<h1><span class="fa fa-code"></span> projects</h1>
-		<p>Here are some code examples and experiments.</p>
-		<div class="circle-row">
-			<ul>
-				<li>
-					<a href="http://jshields.github.io/">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="Gthb"><span class="fa fa-github fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#orig-site">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="site&nbsp;1.0"><span class="fa fa-shield fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-			</ul>
+<div id="main-content">
+	<div id="bio-panel" class="full-height">
+		<div class="col-mid">
+			<h1><span class="fa fa-user"></span> biography</h1>
+			<!--<img id="profile-picture-test" src="images/suit_pic.png" alt="profile picture">-->
+			<div id="profile-picture"></div>
+			<p>
+				Joshua Shields is a web designer &amp; developer based out of Chicago.
+				He has worked at Cars.com and Chicago Public Schools as a technical intern.
+				After graduating from DePaul University, he began work at Textura Corporation.
+			</p>
 		</div>
-	</div>
-</div><!-- end of projects-panel -->
-<div id="resume-panel" class="full-height">
-	<div class="col-mid">
-		<h1><span class="fa fa-file-text"></span> résumé</h1>
-		<p>Below is a copy of my resume that you can view in your browser or download.</p>
-		<iframe src="https://docs.google.com/document/d/14nzUhhEC5qtAnwvid-yeuFz6cZIF89zFjFziiEB_NrU/pub?embedded=true">
-			<p class="failure">Your browser does not support iframes.</p>
-		</iframe>
-		<!--<iframe scrolling="no" seamless="seamless" src="resources/pdf-test.pdf">
-			<p class="failure">Your browser does not support iframes.</p>
-		</iframe>-->
-		<div class="circle-row">
-			<!--<a href="resume.php">
-				<div class="circle pop-over">
-					<div class="circle-content off-white" pop-data="download&nbsp;résumé"><span class="fa fa-download fa-lg"></span></div>
+	</div><!-- end of bio-panel -->
+	<div id="contact-panel" class="full-height">
+		<div class="col-mid">
+			<h1><span class="fa fa-envelope"></span> contact</h1>
+			<form id="contactForm" method="post" action="contact.php">
+				<div>
+			    	<label for="txtEmail">email address</label>
+			    	<input id="txtEmail" name="txtEmail" type="email" placeholder="your email" />
 				</div>
-			</a>-->
-			<ul>
-				<li>
-					<a href="https://docs.google.com/document/d/14nzUhhEC5qtAnwvid-yeuFz6cZIF89zFjFziiEB_NrU/edit?usp=sharing">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="view&nbsp;in&nbsp;browser"><span class="fa fa-globe fa-lg"></span></div>
+				<div>
+			    	<label for="txtName">name</label>
+			    	<input id="txtName" name="txtName" type="text" placeholder="your name" />
+				</div>
+				<div>
+					<label for="txtMessage">message</label>
+					<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="your message" spellcheck="true"></textarea>
+				</div>
+				<!--<?php
+					session_start();
+					if ($_SESSION['cf_return']){
+						echo $_SESSION['cf_return'];
+					}
+				?>-->
+				<p>This message will be sent to <a class="contact-email" href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.</p>
+				<!--<p class="success">example of success class</p>
+				<p class="failure">example of failure class</p>-->
+				<!-- Not using type submit to avoid forced styling by browsers -->
+				<!-- test on iOS Safari -->			
+				<!-- change to button-->
+				<div class="circle-row">
+					<button id="btnSubmit" class="circle pop-over">
+						<div class="circle-content off-white" data-pop="send">
+							<span class="fa fa-arrow-right fa-lg"></span>
 						</div>
-					</a>
-				</li>
-				<li>
-					<a href="resume.php">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" pop-data="download&nbsp;as&nbsp;Word"><span class="fa fa-file-word-o fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-			</ul>
+					</button>
+				</div>
+			</form>
+			<!--<h2>social media</h2>-->
+				<div id="social-icons" class="circle-row">
+				<ul>
+					<li>
+						<a href="#fb">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="Facebook"><span class="fa fa-facebook fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#fb">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="Google"><span class="fa fa-google-plus fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#twt">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="Twitter"><span class="fa fa-twitter fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#li">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="LinkedIn"><span class="fa fa-linkedin fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div><!-- end of social-icons -->
+		</div><!-- end of column -->
+	</div><!-- end of contact-panel -->
+	<div id="projects-panel" class="full-height">
+		<div class="col-mid">
+			<h1><span class="fa fa-code"></span> projects</h1>
+			<p>Here are some code examples and experiments.</p>
+			<div class="circle-row">
+				<ul>
+					<li>
+						<a href="http://jshields.github.io/">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="Gthb"><span class="fa fa-github fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#orig-site">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="site&nbsp;1.0"><span class="fa fa-shield fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-	</div>
-</div><!-- end of resume-panel -->
-<footer>
+	</div><!-- end of projects-panel -->
+	<div id="resume-panel" class="full-height">
+		<div class="col-mid">
+			<h1><span class="fa fa-file-text"></span> résumé</h1>
+			<p>Below is a copy of my resume that you can view in your browser or download.</p>
+			<iframe src="https://docs.google.com/document/d/14nzUhhEC5qtAnwvid-yeuFz6cZIF89zFjFziiEB_NrU/pub?embedded=true">
+				<p class="failure">Your browser does not support iframes.</p>
+			</iframe>
+			<!--<iframe scrolling="no" seamless="seamless" src="resources/pdf-test.pdf">
+				<p class="failure">Your browser does not support iframes.</p>
+			</iframe>-->
+			<div class="circle-row">
+				<!--<a href="resume.php">
+					<div class="circle pop-over">
+						<div class="circle-content off-white" data-pop="download&nbsp;résumé"><span class="fa fa-download fa-lg"></span></div>
+					</div>
+				</a>-->
+				<ul>
+					<li>
+						<a href="https://docs.google.com/document/d/14nzUhhEC5qtAnwvid-yeuFz6cZIF89zFjFziiEB_NrU/edit?usp=sharing">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="view&nbsp;in&nbsp;browser"><span class="fa fa-globe fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="resume.php">
+							<div class="circle pop-over">
+								<div class="circle-content off-white" data-pop="download&nbsp;as&nbsp;Word"><span class="fa fa-file-word-o fa-lg"></span></div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div><!-- end of resume-panel -->
+</div><!-- end of main-content -->
+<footer>site v2.0.1
 	&copy; <!-- <php? echo date(Y); ?> also consider concatenating email string josh@ + joshuashields.com -->
 	<address>
 		Joshua Shields. All Rights Reserved. Contact at: <a class="contact-email" href="mailto:josh@joshuashields.com" tabindex="1">josh@joshuashields.com</a>

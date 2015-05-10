@@ -1,13 +1,14 @@
-console.log('script start');
+(function(){
+	console.log('script start');
+	document.addEventListener("DOMContentLoaded", function(ev) { 
+		console.log('DOM Content Loaded');
 
-document.addEventListener("DOMContentLoaded", function(ev) { 
-	console.log('DOM Content Loaded');
-
-	document.getElementById('btnSubmit').onclick = function(){
-		console.log('contact submit clicked');
+		document.getElementById('btnSubmit').onclick = function(ev){
+			ev.preventDefault();
+			console.log('contact submit clicked');
+		}
+	});
+	window.onload = function(){
+		console.log('window loaded inclouding frames, images, etc.');
 	}
-});
-
-window.onload = function(){
-	console.log('window loaded inclouding frames, images, etc.');
-}
+}());
