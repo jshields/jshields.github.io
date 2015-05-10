@@ -6,6 +6,10 @@
 		document.getElementById('btnSubmit').onclick = function(ev){
 			ev.preventDefault();
 			console.log('contact submit clicked');
+			// category, action, label, value
+			//ga('send', 'event', 'category', 'action', 'label', 0);
+			var message = "Hi Josh this is a test.";
+			ga('send', 'event', 'contact', 'submit', message, 1);
 		}
 	});
 	window.onload = function(){
