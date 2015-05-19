@@ -259,6 +259,12 @@ div>.circle-content{
 		display: none;
 	}
 }
+@media screen and (max-width: 372px){
+	.circle{
+		height: 3em;
+		width: 3em;
+	}
+}
 
 #printMessage{
   display: none;
