@@ -264,6 +264,9 @@ div>.circle-content{
 		height: 3em;
 		width: 3em;
 	}
+	div>.circle-content{
+		padding-top: 1em;
+	}
 }
 
 #printMessage{
