@@ -72,15 +72,15 @@
 			<form id="contactForm" method="post" action="contact.php">
 				<div>
 			    	<label for="txtEmail">email address</label>
-			    	<input id="txtEmail" name="txtEmail" type="email" placeholder="your email" />
+			    	<input id="txtEmail" name="txtEmail" type="text" placeholder="guy@example.com" autocomplete="email" inputmode="email" /><!-- type="email" not working on iOS Safari -->
 				</div>
 				<div>
 			    	<label for="txtName">name</label>
-			    	<input id="txtName" name="txtName" type="text" placeholder="your name" />
+			    	<input id="txtName" name="txtName" type="text" placeholder="Guybrush Threepwood" autocomplete="name" inputmode="latin-name" />
 				</div>
 				<div>
 					<label for="txtMessage">message</label>
-					<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="your message" spellcheck="true"></textarea>
+					<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="Hi Josh!" autocomplete="on" inputmode="latin-prose" spellcheck="true"></textarea>
 				</div>
 				<!--<?php
 					session_start();
