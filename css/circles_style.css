@@ -71,10 +71,10 @@ label{
 	display: block;
 }
 footer a {
-  color: #ccc;
+  color: #eee;
 }
 a{
-	color: #555;
+	color: #333;
 }
 a:hover {
   color: #f0f;
@@ -219,20 +219,9 @@ div>.circle-content{
 	filter: grayscale(100%);
 }
 /*Helper Classes*/
-.red{
-	color: #f00;
-}
-.yellow{
-	color: #ff0;
-}
-.green{
-	color: #0f0;
-}
-.blue{
-	color: #00f;
-}
-.magenta{
-	color: #f0f;
+.highlight{
+	background-color: #f0f;
+	outline-color: #f0f;
 }
 .off-white{
 	color: #eee;
@@ -257,6 +246,37 @@ div>.circle-content{
 }
 .cf:after {
     clear: both;
+}
+
+/* media queries */
+@media screen and (max-width: 512px){
+	.col-mid{
+		margin: 0 auto;
+		display: block;
+		width: 80%;
+	}
+	footer{
+		display: none;
+	}
+}
+
+#printMessage{
+  display: none;
+}
+@media print {
+  #printMessage{
+    display: block;
+    page-break-after: avoid;
+  }
+	html {
+		background:transparent;
+		page-break-after: avoid;
+	}
+	* {
+		color:#000;
+		margin:0;
+		padding:0;
+	}
 }
 
 /* webkit scrollbar styling */
