@@ -15,18 +15,20 @@
 	<!-- contact form -->
 	<!-- links to tests / examples -->
 	<!-- résumé doc iframe and download button  file-text  file-word-o <span class="fa fa-download"></span>-->
-<div id="main-container">
-	<header>
-		<!-- consider just using the </> character escape codes here -->
-		<h1><span class="fa fa-exclamation-triangle"></span> Error 404: Not Found</h1>
-	</header>
-	<div class="single-column">
-		<h2>Sorry! It looks like I don't have a page with that name.</h2>
-	</div><!-- end of single-column -->
-	<footer>
-		&copy; <span id="year"></span> Joshua Shields
-	</footer>
-</div><!-- end of main-container -->
+
+<header>
+	<!-- consider just using the </> character escape codes here -->
+	<h1><span class="fa fa-exclamation-triangle"></span> Error 404: Not Found</h1>
+</header>
+<div id="main-content">
+<div class="col-mid">
+	<h2>Sorry! It looks like I don't have a page with that name.</h2>
+</div><!-- end of single-column -->
+</div>
+<footer>
+	&copy; <span id="year"></span> Joshua Shields
+</footer>
+
 
 <!-- No JS yet
 <script src="js/lib/jquery-2.1.3.min.js" type="text/javascript"></script>
