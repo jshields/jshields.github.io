@@ -130,8 +130,6 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	display: block;
 	width: 50%;
 }
-/*TODO: media query to expand col to 80% width on mobile*/
-
 .circle{
 	height: 4em;
 	width: 4em;
