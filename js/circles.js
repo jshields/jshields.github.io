@@ -1,11 +1,15 @@
 (function(){
+//ga('send', 'event', 'category', 'action', 'label', value);
 	console.log('script start');
-	document.addEventListener('DOMContentLoaded', function(ev) { 
+	document.addEventListener('DOMContentLoaded', function(ev) {
 		console.log('DOM Content Loaded');
-
-		document.getElementById('btnSubmit').onclick = function(ev){
+	}, false);
+	window.addEventListener('load', function(){
+		console.log('window loaded including frames, images, script tag code referencing external API's, etc.');
+		document.getElementById('btnSubmit').addEventListener('click', function(ev){
 			ev.preventDefault();
 			console.log('contact submit clicked');
+			//ga('send', 'event', 'submit', 'click', 'contact');
 			var usrEmail, usrName, usrMsg;
 			usrEmail = document.getElementById('txtEmail').value;
 			usrName = document.getElementById('txtName').value;
@@ -16,15 +20,11 @@
 				console.log('@ missing from email');
 			}
 			if (usrName === ""){
-				console.log('name empty\a');	
+				console.log('name empty');	
 			}
 			if (usrMsg === ""){
-				console.log('msg empty\a');
-				document.write('\\a');
+				console.log('msg empty\\a');
 			}
-		};
-	});
-	window.onload = function(){
-		console.log('window loaded inclouding frames, images, etc.');
-	};
+		}, false);
+	}, false);
 }());
