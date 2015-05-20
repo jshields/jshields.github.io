@@ -5,7 +5,7 @@
 		console.log('DOM Content Loaded');
 	}, false);
 	window.addEventListener('load', function(){
-		console.log('window loaded including frames, images, script tag code referencing external API's, etc.');
+		console.log('window loaded including frames, images, script tag code referencing external APIs, etc.');
 		document.getElementById('btnSubmit').addEventListener('click', function(ev){
 			ev.preventDefault();
 			console.log('contact submit clicked');
