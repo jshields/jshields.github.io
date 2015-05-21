@@ -254,7 +254,8 @@ div>.circle-content{
 		width: 80%;
 	}
 	iframe[src*="docs.google"]{
-		width: 80%;
+		width: 50%;
+		margin: 0;
 	}
 	footer{
 		display: none;
