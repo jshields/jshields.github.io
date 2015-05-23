@@ -31,22 +31,11 @@
 	var EventRegistry = {
 		reg: {},
 		get: function(el){
-			
 			var els, events, key = el.toString();
 			
 			var reg = this.reg[key];
-			if (!reg.els){
-				els = reg.els = [];
-			}
-			else{
-				els = reg.els;
-			}
-			if (!reg.events){
-				events = reg.events = [];
-			}
-			else{
-				events = reg.events;
-			}
+			(!reg.els) ? els = reg.els = [] : els = reg.els;
+			(!reg.events) ? events = reg.events = [] : events = reg.events;
 			
 			var idx = els.indexOf(el);
 			if (idx === -1){
@@ -102,16 +91,14 @@
         return child;
     };
 	
-	
-	
 	Collection.extend = extend;
 	var joshQuery = Collection.extend(
 		{
 			on : function(ev, fn){
-			this.addEventListener(ev, function(){
-				fn.apply(this, arguments);
-			}, false);
-			EventRegistry.get(this);
+				this.addEventListener(ev, function(){
+					fn.apply(this, arguments);
+				}, false);
+				EventRegistry.get(this);
 			}
 		}
 	);
