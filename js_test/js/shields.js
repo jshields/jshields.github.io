@@ -10,37 +10,28 @@
 	    }
 	    console.log('Query variable %s not found', variable);
 	}
-
-	/*function Ajax(){
-		var req = new XMLHttpRequest;
+	
+	// Collection
+	var a = [];
+	function Collection(){
 		return this;
 	}
-	Ajax.prototype = {
-		get: function(){
-			// complete and 200 OK
-			//.readyState == 4 && .status == 200
-			//return this.responseText;
-		},
-		post: function(){
-		
-		},
-		request: function(type, ){
-			if (type == "get"){
-			
+	Collection.prototype = {
+		each: function(fn){
+			for (var i = this.length; i--;){
+				fn.apply(this, [this[i], i, this]);
 			}
-			else if (type == "post"){
-			
-			}
+		},
+		push: function(){
+			return a.push.apply(this, arguments);
 		}
 	};
-
-	var xml = new XMLHttpRequest()
-	xml.onload= function(){window.console.log(arguments); JSON.parse(this.response);}
-	xml.open('GET', 'http://www.inventumdigital.com/hero/videocount.php')
-	xml.send()
-
-
-	*/
+	
+	var boo = new Collection();
+	boo.push('car', 'cat', 'bat');
+	boo.each(function(){
+		console.log(arguments);
+	});
 	
 	var Ajax = {
 		request: function(conType, url){
@@ -95,18 +86,18 @@
 				console.log('update bound: '+srcEl+'='+srcEl.value+' to '+targetEl);
 				targetEl.innerHTML = srcEl.value;
 			});
-		}
-		/*doubleBind: function(yin, yang){
+		},
+		doubleBind: function(yin, yang){
 			var yinEl = document.getElementById(yin);
 			var yangEl = document.getElementById(yang);
 
-			yinEl.keypress = function(){
+			yinEl.addEventListener('keyup', function(){
 				yangEl.innerHTML = yinEl.innerHTML;
-			}
-			yangEl.keypress = function(){
-				yinEl.innerHTML = yang.innerHTML;
-			}
-		}*/
+			}, false);
+			yangEl.addEventListener('keyup', function(){
+				yinEl.innerHTML = yangEl.innerHTML;
+			}, false);
+		}
 
 		//add 32, 27
 		/*var keyCodes = { backspace:8, enter:13, left:37, up:38, right:39,down:40, del:46, f5:116};
@@ -128,6 +119,7 @@
 
 	document.addEventListener('DOMContentLoaded', function(ev) {
 		Text.singleBind('txtSource', 'target');
+		Text.doubleBind('txtYin', 'txtYang');
 		document.addEventListener('keydown', function(ev){
 			console.log('keycode: '+ev.keyCode);
 			updateCaretTracker();

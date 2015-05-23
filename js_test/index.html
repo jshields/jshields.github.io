@@ -10,15 +10,22 @@
 		label{
 			display: block;
 		}
+		p{
+			border: 1px solid #000;
+		}
 	</style>
 </head>
 <body>
 <div id="main">
 	<h1>Binding</h1>
+	<h3>Single</h3>
 	<label>Source: <input id="txtSource" type="text"></label>
 	<label>Target: <div id="target"></div></label>
 	<label>Selection from Target: <div id="selected"></div></label>
 	<label>Caret Position in Target: <div id="caretPosition"></div></label>
+	<h3>Double</h3>
+	<p id="txtYin" contenteditable="true"></p>
+	<p id="txtYang" contenteditable="true"></p>
 	<hr />
 	<h1>AJAX response test</h1>
 	<input id="txtConType" type="text" placeholder="GET/POST" />
