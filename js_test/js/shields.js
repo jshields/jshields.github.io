@@ -14,6 +14,7 @@
 	// Collection
 	var a = [];
 	function Collection(){
+		this.length = 0;
 		return this;
 	}
 	Collection.prototype = {
@@ -27,12 +28,104 @@
 		}
 	};
 	
-	var boo = new Collection();
-	boo.push('car', 'cat', 'bat');
-	boo.each(function(){
-		console.log(arguments);
-	});
+	var EventRegistry = {
+		reg: {},
+		get: function(el){
+			
+			var els, events, key = el.toString();
+			
+			var reg = this.reg[key];
+			if (!reg.els){
+				els = reg.els = [];
+			}
+			else{
+				els = reg.els;
+			}
+			if (!reg.events){
+				events = reg.events = [];
+			}
+			else{
+				events = reg.events;
+			}
+			
+			var idx = els.indexOf(el);
+			if (idx === -1){
+				idx = els.length;
+				els.push(el);
+				events[idx] = {};
+			}
+			return events[idx];
+		}
+	};
 	
+	  var merge = function () {
+        var m, arg, i = 1,
+            base = arguments[0];
+        for (; i < arguments.length; i++) {
+            arg = arguments[i];
+            for (m in arg) {
+                if (arg.hasOwnProperty(m)) {
+                    base[m] = arg[m];
+                }
+            }
+        }
+        return base;
+    },
+    extend = function (protoProps, staticProps) {
+        var parent = this;
+        var child;
+        // The constructor function for the new subclass is either defined by you
+        // (the "constructor" property in your `extend` definition), or defaulted
+        // by us to simply call the parent constructor.
+        if (protoProps && protoProps.hasOwnProperty('constructor')) {
+            child = protoProps.constructor;
+        } else {
+            child = function () {
+                return parent.apply(this, arguments);
+            };
+        }
+        // Add static properties to the constructor function, if supplied.
+        merge(child, parent, staticProps);
+        // Set the prototype chain to inherit from `parent`, without calling
+        // `parent` constructor function.
+        var Surrogate = function () {
+            this.constructor = child;
+        };
+        Surrogate.prototype = parent.prototype;
+        child.prototype = new Surrogate;
+        // Add prototype properties (instance properties) to the subclass,
+        // if supplied.
+        if (protoProps) merge(child.prototype, protoProps);
+        // Set a convenience property in case the parent's prototype is needed
+        // later.
+        child.__super__ = parent.prototype;
+        return child;
+    };
+	
+	
+	
+	Collection.extend = extend;
+	var joshQuery = Collection.extend(
+		{
+			on : function(ev, fn){
+			this.addEventListener(ev, function(){
+				fn.apply(this, arguments);
+			}, false);
+			EventRegistry.get(this);
+			}
+		}
+	);
+	
+	var $ = window.$ = function(selector, context){
+		return new joshQuery(selector, context);
+	};
+	
+	console.log($());
+
+
+	//el.on('click', function(args){
+	//});
+
 	var Ajax = {
 		request: function(conType, url){
 			var xml = new XMLHttpRequest();
@@ -50,7 +143,6 @@
 			};
 		}
 	};
-
 
 	var Text = {
 		getCaret: function(el){
@@ -76,26 +168,54 @@
 		    }
 		    return selection;
 		},
+		getTextProperty: function(el){
+			var prop;
+			((el.tagName == "TEXTAREA") || (el.tagName == "INPUT")) ?  prop="value" : prop="innerHTML";
+			return prop;
+		},
 		singleBind: function(src, target){
-			console.log('single');
 			var srcEl = document.getElementById(src);
 			var targetEl = document.getElementById(target);
-			console.log(srcEl);
-			targetEl.innerHTML = srcEl.value;
+			var srcProp = Text.getTextProperty(srcEl);
+			var targetProp = Text.getTextProperty(targetEl);
+			
+			targetEl[targetProp] = srcEl[srcProp];
+			
+			srcEl.addEventListener('change', function(){
+				targetEl[targetProp] = srcEl[srcProp];
+			}, false);
+			srcEl.addEventListener('keydown', function(){
+				targetEl[targetProp] = srcEl[srcProp];
+			}, false);
 			srcEl.addEventListener('keyup', function(){
-				console.log('update bound: '+srcEl+'='+srcEl.value+' to '+targetEl);
-				targetEl.innerHTML = srcEl.value;
-			});
+				targetEl[targetProp] = srcEl[srcProp];
+			}, false);
 		},
 		doubleBind: function(yin, yang){
 			var yinEl = document.getElementById(yin);
 			var yangEl = document.getElementById(yang);
-
+			var yinProp = Text.getTextProperty(yinEl);
+			var yangProp = Text.getTextProperty(yangEl);
+			
+			yangEl[yangProp] = yinEl[yinProp];
+			
+			yinEl.addEventListener('change', function(){
+				yangEl[yangProp] = yinEl[yinProp];
+			}, false);
+			yangEl.addEventListener('change', function(){
+				yinEl[yinProp] = yangEl[yangProp];
+			}, false);
 			yinEl.addEventListener('keyup', function(){
-				yangEl.innerHTML = yinEl.innerHTML;
+				yangEl[yangProp] = yinEl[yinProp];
 			}, false);
 			yangEl.addEventListener('keyup', function(){
-				yinEl.innerHTML = yangEl.innerHTML;
+				yinEl[yinProp] = yangEl[yangProp];
+			}, false);
+			yinEl.addEventListener('keydown', function(){
+				yangEl[yangProp] = yinEl[yinProp];
+			}, false);
+			yangEl.addEventListener('keydown', function(){
+				yinEl[yinProp] = yangEl[yangProp];
 			}, false);
 		}
 
@@ -120,6 +240,9 @@
 	document.addEventListener('DOMContentLoaded', function(ev) {
 		Text.singleBind('txtSource', 'target');
 		Text.doubleBind('txtYin', 'txtYang');
+		Text.doubleBind('txtYin2', 'txtYang2');
+		Text.doubleBind('txtYin3', 'txtYang3');
+		Text.doubleBind('yin4', 'yang4');
 		document.addEventListener('keydown', function(ev){
 			console.log('keycode: '+ev.keyCode);
 			updateCaretTracker();
@@ -152,4 +275,10 @@
 	});
 	window.addEventListener('onload', function(){
 	}, false);
+	
+	var boo = new Collection();
+	boo.push('car', 'cat', 'bat');
+	boo.each(function(){
+		console.log(arguments);
+	});
 }());
