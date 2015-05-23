@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Core Test</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta name="author" content="Joshua Shields">
+	<meta name="description" content="Demo page for shields.js">
+	<style type="text/css">
+		label{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div id="main">
+	<h1>Binding</h1>
+	<label>Source: <input id="txtSource" type="text"></label>
+	<label>Target: <div id="target"></div></label>
+	<label>Selection from Target: <div id="selected"></div></label>
+	<label>Caret Position in Target: <div id="caretPosition"></div></label>
+	<hr />
+	<h1>AJAX response test</h1>
+	<input id="txtConType" type="text" placeholder="GET/POST" />
+	<input id="txtUrl" type="text" placeholder="http://www.example.com/same_origin_file.php" />
+	<input id="btnAjaxTest" type="button" value="AJAX">
+	<div id="responseContainer">...</div>
+	<hr />
+</div>
+<script type="text/javascript" src="js/shields.js"></script>
+</body>
+</html>
