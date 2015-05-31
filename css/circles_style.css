@@ -88,7 +88,7 @@ iframe[src$=".pdf"]{
 	height: 22em;
 }
 iframe[src*="docs.google"]{
-	width: 50%;
+	width: 100%;
 	/* resize iframe height with js? */
 	height: 512px;
 }
