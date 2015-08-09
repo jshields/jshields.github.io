@@ -227,6 +227,30 @@ div>.circle-content{
   margin-left: calc(100%/6);
 }
 
+.lightBox{
+  background-image: url(../images/Jet-Plane.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0.3em solid #0080ff;
+  width: 15em;
+  height: 15em;
+  margin: 1em;
+  display: inline-block;
+  background-size: 25em;
+  transition: background-size .5s ease-out;
+}
+.lightBox:hover{
+  background-size: 30em;
+  transition: background-size .5s ease-out;
+}
+.lightBox:after{
+  display: block;
+  font-size: 2em;
+  text-align: center;
+  vertical-align: middle;
+  content: "\0021E8";
+}
+
 /* Helper Classes */
 .success, .failure{
 	text-align: center;
