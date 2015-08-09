@@ -1,11 +1,12 @@
+/*
 (function(){
 //ga('send', 'event', 'category', 'action', 'label', value);
 	console.log('script start');
 	document.addEventListener('DOMContentLoaded', function(ev) {
-		console.log('DOM Content Loaded');
+		//console.log('DOM Content Loaded');
 	}, false);
 	window.addEventListener('load', function(){
-		console.log('window loaded including frames, images, script tag code referencing external APIs, etc.');
+		//console.log('window loaded including frames, images, script tag code referencing external APIs, etc.');
 		document.getElementById('btnSubmit').addEventListener('click', function(ev){
 			ev.preventDefault();
 			console.log('contact submit clicked');
@@ -26,5 +27,7 @@
 				console.log('msg empty\\a');
 			}
 		}, false);
+		
 	}, false);
 }());
+*/
