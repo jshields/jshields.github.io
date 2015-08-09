@@ -11,62 +11,65 @@
         }
         return true;
     }
-
+    
     var modalActive = false;
-    var currentModalContent = null;
-    var delay = 500;
-    
-    var ref;
     var modalList = [];
-    
     $('.modal').each(function(){
         modalList.push('#'+($(this).attr('id')));
     });
     console.log(modalList);
     
+    function openModal(modal){
+        if (($.inArray(modal, modalList)!=-1) && (!modalActive)){
+            modalActive = true;
+            var content = $(modal).find('.modal-content');
+            // scroll the start of the modal contents into view, in case we're on a small screen
+            $(modal).fadeIn('fast', function(){
+                	$('html, body').scrollTop($(content).offset().top);
+            });
+        }
+    }
+    function closeModals(){
+        modalActive = false;
+        $('.modal').fadeOut('fast');
+    }
+
     $(document).ready(function(){
         //modal open/close
         var winhash = window.location.hash;
         if (winhash){
             console.log('window hash: '+winhash);
-            modalActive = true;
-            currentModalContent = $(winhash).find('.modal-content');
-            $(winhash).delay(delay).fadeIn('fast', function(){
-            	$('html, body').scrollTop($(currentModalContent).offset().top);
-            });
+            openModal(winhash);
         }
         $('.copy-link').click(function(){
             console.log('copy-link clicked: '+window.location);
         }); 
         $('.modal-btn').click(function(ev){
-            ref = $(this).attr('href');
-            if (($.inArray(ref, modalList)!=-1) && (!modalActive)){
-                ev.preventDefault();
-                $('.modal').fadeOut('fast');
-                modalActive = true;
-                currentModalContent = $(ref).find('.modal-content');
-                $(ref).fadeIn('fast', function(){
-                	$("html, body").scrollTop($(currentModalContent).offset().top);
-            	});
-            }
+            var ref = $(this).attr('href');
+            // It would be nice to set the window.location to the modal ID but this causes scroll jumping too
+            ev.preventDefault();
+            closeModals();
+            openModal(ref);
         });
+        /* we may want to scrollTop onto the modal contents when the window gets resized as well, which keeps the modal in view
+        However, this causes scroll position jumps on android because the navbar popping in and out triggers the resize event
         $(window).resize(function(){
-        	if ((modalActive) && (currentModalContent!=null)){
-        		$("html, body").scrollTop($(currentModalContent).offset().top);
-        	}
-    	});
+    	});*/
+        
+        $('.close-btn').click(function(){
+            closeModals();
+        });
         $(document).click(function(event) {
-            if ($(event.target).is('.modal-front, .modal-back, .close-btn')) {
-                modalActive = false;
-                $('.modal').fadeOut('fast');
+            if ($(event.target).is('.modal-front, .modal-back')) {
+                console.log(event.target+' clicked', 'related target?: '+event.relatedTarget);
+                closeModals();
             }
         });
         //key commands
         $(document).keydown(function(ev){
             //esc key
             if (ev.keyCode == 27){
-                modalActive = false;
-                $('.modal').fadeOut('fast');
+                closeModals();
             }
             //enter key
             if (ev.keyCode == 13)

@@ -219,7 +219,7 @@ div>.circle-content{
 .modal-content {
   z-index: 40;
   text-align: center;
-  background-color: #FFF;
+  background-color: #eee;
 }
 .modal-col {
   z-index: 50;
@@ -247,7 +247,7 @@ div>.circle-content{
   display: block;
   font-size: 2em;
   text-align: center;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
   content: "\0021E8";
 }
 
