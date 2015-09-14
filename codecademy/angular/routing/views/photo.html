@@ -1,0 +1,10 @@
+<div class="photo">
+  <div class="container">
+    <img ng-src="{{ detail.url }}">
+    <h2 class="photo-title">{{ photo.title }}</h2>
+    <p class="photo-author">{{ photo.author }}</p>
+    <p class="photo-views">{{ photo.views }}</p>
+    <p class="photo-upvotes">{{ photo.upvotes | number }}</p>
+    <p class="photo-pubdate">{{ photo.pubdate | date }}</p>
+  </div>
+</div>
