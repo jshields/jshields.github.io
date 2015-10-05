@@ -1,3 +1,5 @@
+// TODO remove AWS dependency by making service with this data and photos hosted on the backend
+
 app.factory('photos', ['$http', function($http) {
   return $http.get('https://s3.amazonaws.com/codecademy-content/courses/ltp4/photos-api/photos.json')
          .success(function(data) {
