@@ -15,10 +15,10 @@
 			usrMsg = document.getElementById('txtMessage').value;
 			var emailStr = 'name, email, msg='+usrName+', '+usrEmail+', '+usrMsg;
 			console.log(emailStr);
-			//format ga('send', 'event', 'category', 'action', 'label', value);
+			//format: ga('send', 'event', 'category', 'action', 'label', value);
 			ga('send', 'event', 'submit', 'contact', emailStr);
 			
-			//write regex for finding email, consider grabbing regex from the HTML5 living standard page on input type email
+			//TODO write regex for finding email, consider grabbing regex from the HTML5 living standard page on input type email
 			if (!usrEmail.substr('@')){
 				console.log('@ missing from email');
 			}
