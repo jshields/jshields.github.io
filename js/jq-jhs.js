@@ -1,6 +1,3 @@
-
-
-
 (function($){
     function validate(){
         if (($('input[type=text]').val().length == 0) && ($('input[type=email]').val().length == 0) && ($('textarea').val().length == 0)){
