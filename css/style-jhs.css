@@ -1,7 +1,7 @@
-::selection{
+::selection {
 	background-color: #f0f;
 }
-*{
+* {
 	border: none;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -13,7 +13,7 @@
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;*/
-html, body{
+html, body {
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -21,7 +21,7 @@ html, body{
 	color: #111;
 	background-color: #eee;
 }
-header, footer{
+header, footer {
 	text-align: center;
 	color: #eee;
 	background-color: rgba(17, 17, 17, 0.8); /* #111 at 0.8 opacity, using rgba to avoid transparency issues with child elements. Consider changing back to #111 for production site */
@@ -30,44 +30,37 @@ header, footer{
 	z-index: 2000;
 	width: 100%;
 }
-header{
+header {
 	box-shadow: 0px 4px 5px #333;
 }
 /* add media query or js for fixing/unfixing header */
-footer{
+footer {
 	bottom: 0;
 	display: block;
 	height: 2em;
 	box-shadow: 0px -4px 5px #333;
 }
-#main-content{
+#main-content {
 	height: 100%;
 }
-#main-content>.full-height:last-of-type{
+#main-content>.full-height:last-of-type {
 	margin-bottom: 3em;
 }
-#disclaimer{
-	z-index: 1000; position: fixed; top: 0;
-}
-h1{
+h1 {
 	font-size: 2em;
+    margin: 0 0 .2em 0;
 }
-h2{
+h2 {
 	font-size: 1.5em;
+    margin: 0 0 0.1em 0;
 }
-h1, h2, label{
+h1, h2, label {
 	text-align: center;
 }
-address{
+address {
 	display: inline-block;
 }
-h1{
-	margin: 0 0 .2em 0;
-}
-h2{
-	margin: 0 0 0.1em 0;
-}
-label{
+label {
 	margin-top: 1em;
 	font-weight: bold;
 	display: block;
@@ -75,29 +68,29 @@ label{
 footer a {
   color: #eee;
 }
-a{
+a {
 	color: #333;
 }
 a:hover {
   color: #f0f;
 }
-iframe{
+iframe {
 	display: block;
 	margin: 0 auto;
 }
-iframe[src$=".pdf"]{
+iframe[src$=".pdf"] {
 	width: 17em;
 	height: 22em;
 }
-iframe[src*="docs.google"]{
+iframe[src*="docs.google"] {
 	width: 100%;
 	/* resize iframe height with js? */
 	height: 512px;
 }
-textarea{
+textarea {
 	resize: vertical;
 }
-select, input[type=text], input[type=email], textarea{
+select, input[type=text], input[type=email], textarea, .button {
 	margin-bottom: 0.5em;
 	border: none;
 	font-size: 1.2em;
@@ -109,30 +102,31 @@ select, input[type=text], input[type=email], textarea{
 	box-sizing: border-box;
 	border-radius: 3px;
 	width: 100%;
+    text-decoration: none;
 }
-select:hover, .circle:hover, input[type=text]:hover, input[type=email]:hover, textarea:hover{
+select:hover, .circle:hover, input[type=text]:hover, input[type=email]:hover, textarea:hover, .button:hover {
 	color: #111;
 	background-color: #eee;
 	cursor: pointer;
 }
-input[type=text]:focus, input[type=email]:focus, textarea:focus{
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
 	color: #111;
 	background-color: #eee;
 	cursor: text;
 }
-.full-height{
+.full-height {
 	min-height: 100%;
 	padding-top: 5em;
 	box-sizing: border-box;
 	border-bottom: 1px solid #111;
 	/*box-shadow: -5px 0px 12px #000, 5px 0px 12px #000;*/
 }
-.col-mid{
+.col-mid {
 	margin: 0 auto;
 	display: block;
 	width: 50%;
 }
-.circle{
+.circle {
 	height: 4em;
 	width: 4em;
 	background-color: #111;
@@ -144,35 +138,35 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus{
 	position: relative;
 	outline: none;
 }
-.circle-content{
+.circle-content {
 	font-size: 1em;
 	line-height: 1em;
 	margin: 0 auto;
 	width: 80%;
 }
-div>.circle-content{
+div>.circle-content {
 	padding-top: 1.5em;
 }
-.circle:hover>.circle-content{
+.circle:hover>.circle-content {
 	color: #111;
 	cursor: pointer;
 }
-.circle-row .circle-content{
+.circle-row .circle-content {
 	display: inline-block;
 }
-.circle-row, .circle-row>ul{
+.circle-row, .circle-row>ul {
 	text-align: center;
 	padding: 0;
 	list-style: none;
 }
-.circle-row>ul li{
+.circle-row>ul li {
 	display: inline;
 }
-.circle-row>ul li>a, .circle-row>a{
+.circle-row>ul li>a, .circle-row>a {
 	text-decoration: none;
 	outline: none;
 }
-.pop-over:hover>div:after{ /*, .circle.pop-over:hover>.circle-content:after{  nth-child(2)  */
+.pop-over:hover>div:after { /*, .circle.pop-over:hover>.circle-content:after{  nth-child(2)  */
 	z-index: 1000;
 	position: absolute;
 	margin: 0;
@@ -184,7 +178,7 @@ div>.circle-content{
 	box-shadow: 2px 2px 5px #333;
 	content: attr(data-pop);
 }
-#profile-picture{
+#profile-picture {
 	background-size: 15em;
 	width: 15em;
 	height: 15em;
@@ -230,7 +224,7 @@ div>.circle-content{
   margin-left: calc(100%/6);
 }
 
-.lightBox{
+.lightBox {
   background-image: url(../images/Jet-Plane.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -242,11 +236,11 @@ div>.circle-content{
   background-size: 25em;
   transition: background-size .5s ease-out;
 }
-.lightBox:hover{
+.lightBox:hover {
   background-size: 30em;
   transition: background-size .5s ease-out;
 }
-.lightBox:after{
+.lightBox:after {
   display: block;
   font-size: 2em;
   text-align: center;
@@ -255,41 +249,41 @@ div>.circle-content{
 }
 
 /* Helper Classes */
-.success, .failure{
+.success, .failure {
 	text-align: center;
 }
-.success{
+.success {
 	background-color: #80ff80;
 	border: 1px solid #0f0;
 }
-.success:before{
+.success:before {
 	content: 'Success! ';
 }
-.failure{
+.failure {
 	background-color: #ff8080;
 	border: 1px solid #f00;
 }
-.failure:before{
+.failure:before {
 	content: 'Oops! ';
 }
-.highlight{
+.highlight {
 	background-color: #f0f;
 	outline-color: #f0f;
 }
-.off-white{
+.off-white {
 	color: #eee;
 }
-.off-black{
+.off-black {
 	color: #111;
 }
-.hide-on-start{
+.hide-on-start {
 	display: none;
 }
 /* floats with micro clearfix */
-.pull-right{
+.pull-right {
 	float: right;
 }
-.pull-left{
+.pull-left {
 	float: left;
 }
 .cf:before,
@@ -302,34 +296,34 @@ div>.circle-content{
 }
 
 /* media queries */
-@media screen and (max-width: 512px){
+@media screen and (max-width: 512px) {
 	.col-mid{
 		margin: 0 auto;
 		display: block;
 		width: 80%;
 	}
-	iframe[src*="docs.google"]{
+	iframe[src*="docs.google"] {
 		display: none;
 	}
 	footer{
 		display: none;
 	}
 }
-@media screen and (max-width: 372px){
-	.circle{
+@media screen and (max-width: 372px) {
+	.circle {
 		height: 3em;
 		width: 3em;
 	}
-	div>.circle-content{
+	div>.circle-content {
 		padding-top: 1em;
 	}
 }
 
-#print-message{
+#print-message {
   display: none;
 }
 @media print {
-  #print-message{
+  #print-message {
     display: block;
     page-break-after: avoid;
   }

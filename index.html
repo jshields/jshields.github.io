@@ -101,121 +101,33 @@
 	</nav>
 </header>
 <div id="main-content">
-	<h3 id="disclaimer">This page is a work-in-progress</h3>
 	<div id="bio-panel" class="full-height">
 		<div class="col-mid">
 			<h1><span class="fa fa-user"></span> about</h1>
+            <h3>This page is a work-in-progress</h3>
 			<div id="profile-picture"></div>
-			<p>Joshua Shields lorem ipsum dolar
+			<p>lorem ipsum
 			</p>
 		</div><!-- end of column -->
 	</div><!-- end of bio-panel -->
-	<div id="contact-panel" class="full-height">
-		<div class="col-mid">
-			<h1><span class="fa fa-envelope"></span> contact</h1>
-            <p id="no-js">
-                <!--TODO-->
-            </p>
-			<form id="contactForm" method="post" action="">
-				<div>
-			    	<label for="txtEmail">email address</label>
-			    	<input id="txtEmail" name="txtEmail" type="text" placeholder="username@example.com" autocomplete="email" inputmode="email" /><!-- type="email" not working on iOS Safari -->
-				</div>
-				<div>
-			    	<label for="txtName">name</label>
-			    	<input id="txtName" name="txtName" type="text" placeholder="Firstname Lastname" autocomplete="name" inputmode="latin-name" />
-				</div>
-				<div>
-					<label for="txtMessage">message</label>
-					<textarea id="txtMessage" name="txtMessage" rows="3" placeholder="Hello Josh!" autocomplete="on" inputmode="latin-prose" spellcheck="true"></textarea>
-				</div>
-				<p>This message will be sent to <a class="contact-email" href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.</p>
-				<div class="circle-row">
-					<button id="btnSubmit" class="circle pop-over">
-						<div class="circle-content off-white" data-pop="send">
-							<span class="fa fa-arrow-right fa-lg"></span>
-						</div>
-					</button>
-				</div>
-			</form>
-		</div><!-- end of column -->
-		<div id="social-icons" class="circle-row">
-			<ul>
-				<li>
-					<a href="https://www.facebook.com/Josh.H.Shields">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="Facebook"><span class="fa fa-facebook fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="https://plus.google.com/u/0/+JoshShieldsGoogle">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="Google"><span class="fa fa-google-plus fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="https://twitter.com/JoshHShields">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="Twitter"><span class="fa fa-twitter fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="https://www.linkedin.com/profile/view?id=278722736">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="LinkedIn"><span class="fa fa-linkedin fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div><!-- end of social-icons -->
-	</div><!-- end of contact-panel -->
 	<div id="projects-panel" class="full-height">
 		<div class="col-mid">
 			<h1><span class="fa fa-code"></span> projects</h1>
-			<p>Here are some code examples and experiments.</p>
+			<p>Here are some projects, code examples, and experiments.</p>
 		</div><!-- end of column -->
-		<div class="circle-row">
+
+		<div>
 			<ul>
 				<li>
-					<a href="http://github.com/jshields">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="Github"><span class="fa fa-github fa-lg"></span></div>
-						</div>
-					</a>
+					<a href="http://joshuashields.com/">http://joshuashields.com/</a>
 				</li>
+
 				<li>
-					<a href="#orig-site">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="site&nbsp;1.0"><span class="fa fa-shield fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#examples-modal" class="modal-btn">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="examples&nbsp;gallery"><span class="fa fa-th fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#games-modal" class="modal-btn">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="game&nbsp;design"><span class="fa fa-gamepad fa-lg"></span></div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<div class="circle pop-over">
-							<div class="circle-content off-white" data-pop="pop"><span class="fa fa-file-code-o fa-lg"></span></div>
-						</div>
-					</a>
+					<a href="#games-modal" class="button modal-btn">games</a>
 				</li>
 			</ul>
-		</div><!-- end of projects row -->
+		</div><!-- end of projects -->
+
 	</div><!-- end of projects-panel -->
 	<div id="resume-panel" class="full-height">
 		<div class="col-mid">
@@ -248,6 +160,68 @@
 			</ul>
 		</div><!-- end of resume options row -->
 	</div><!-- end of resume-panel -->
+    <div id="contact-panel" class="full-height">
+        <div class="col-mid">
+            <h1><span class="fa fa-envelope"></span> contact</h1>
+            <p id="no-js">
+                <!--TODO-->
+            </p>
+            <form id="contactForm" method="post" action="">
+                <div>
+                    <label for="txtEmail">email address</label>
+                    <input id="txtEmail" name="txtEmail" type="text" placeholder="username@example.com" autocomplete="email" inputmode="email" /><!-- type="email" not working on iOS Safari -->
+                </div>
+                <div>
+                    <label for="txtName">name</label>
+                    <input id="txtName" name="txtName" type="text" placeholder="Firstname Lastname" autocomplete="name" inputmode="latin-name" />
+                </div>
+                <div>
+                    <label for="txtMessage">message</label>
+                    <textarea id="txtMessage" name="txtMessage" rows="3" placeholder="Hello Josh!" autocomplete="on" inputmode="latin-prose" spellcheck="true"></textarea>
+                </div>
+                <p>This message will be sent to <a class="contact-email" href="mailto:josh@joshuashields.com">josh@joshuashields.com</a>.</p>
+                <div class="circle-row">
+                    <button id="btnSubmit" class="circle pop-over">
+                        <div class="circle-content off-white" data-pop="send">
+                            <span class="fa fa-arrow-right fa-lg"></span>
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div><!-- end of column -->
+        <div id="social-icons" class="circle-row">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/Josh.H.Shields">
+                        <div class="circle pop-over">
+                            <div class="circle-content off-white" data-pop="Facebook"><span class="fa fa-facebook fa-lg"></span></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/u/0/+JoshShieldsGoogle">
+                        <div class="circle pop-over">
+                            <div class="circle-content off-white" data-pop="Google"><span class="fa fa-google-plus fa-lg"></span></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/JoshHShields">
+                        <div class="circle pop-over">
+                            <div class="circle-content off-white" data-pop="Twitter"><span class="fa fa-twitter fa-lg"></span></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/profile/view?id=278722736">
+                        <div class="circle pop-over">
+                            <div class="circle-content off-white" data-pop="LinkedIn"><span class="fa fa-linkedin fa-lg"></span></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- end of social-icons -->
+    </div><!-- end of contact-panel -->
 </div><!-- end of main-content -->
 <footer>
 	&copy;<span id="footer-year"></span>
