@@ -38,9 +38,39 @@
             console.log('window hash: '+winhash);
             openModal(winhash);
         }
+
+
+        /* general page event handlers */
+        // send a ga message on contact form submit
+        $('btnSubmit').click(function(ev){
+            ev.preventDefault();
+            console.log('contact submit clicked');
+            var usrEmail, usrName, usrMsg;
+            usrEmail = $('#txtEmail').val();
+            usrName = $('#txtName').val();
+            usrMsg = $('#txtMessage').val();
+            var emailStr = 'name, email, msg='+usrName+', '+usrEmail+', '+usrMsg;
+            console.log(emailStr);
+            //format: ga('send', 'event', 'category', 'action', 'label', value);
+            ga('send', 'event', 'submit', 'contact', emailStr);
+            
+            //TODO write regex for finding email, consider grabbing regex from the HTML5 living standard page on input type email
+            if (!usrEmail.substr('@')){
+                console.log('@ missing from email');
+            }
+            if (usrName === ''){
+                console.log('name empty');  
+            }
+            if (usrMsg === ''){
+                console.log('msg empty');
+            }
+        });
+
         $('.copy-link').click(function(){
             console.log('copy-link clicked: '+window.location);
         }); 
+
+        /* modals */
         $('.modal-btn').click(function(ev){
             var ref = $(this).attr('href');
             // It would be nice to set the window.location to the modal ID but this causes scroll jumping too

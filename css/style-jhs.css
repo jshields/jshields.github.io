@@ -46,6 +46,9 @@ footer{
 #main-content>.full-height:last-of-type{
 	margin-bottom: 3em;
 }
+#disclaimer{
+	z-index: 1000; position: fixed; top: 0;
+}
 h1{
 	font-size: 2em;
 }
