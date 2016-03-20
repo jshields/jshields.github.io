@@ -1,1 +1,0 @@
-<?php header('Content-Disposition: attachment; filename="Shields-Joshua_resume_12-03-2014.docx"'); header('Content-type: application/docx'); readfile('resources/Shields-Joshua_resume_12-03-2014.docx');?>
